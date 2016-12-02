@@ -9,7 +9,8 @@ download-precompiled-ruby:
     - name: /usr/local
     - source: https://s3.amazonaws.com/pkgr-buildpack-ruby/current/centos-6/{{ ruby_version }}.tgz
     - source_hash: {{ pkg_hash }}
-    - tar_options: z
+    - enforce_toplevel: False
+    - options: z
     - archive_format: tar
     - if_missing: /usr/local/bin/ruby
 
